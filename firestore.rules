@@ -1,0 +1,25 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Public read for booked slot availability so clients can see which slots are taken
+    match /slots/{slotId} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+
+    // Bookings collection: Strict Row Level Security
+    // ONLY the two authorized admin emails can read/select bookings.
+    // Normal authenticated users and anonymous users CANNOT read bookings.
+    match /bookings/{bookingId} {
+      allow read: if request.auth != null && (
+        request.auth.token.email == 'tanishqabhosale99@gmail.com' ||
+        request.auth.token.email == 'saanchibhosale27@gmail.com'
+      );
+      allow write: if false; // All writes are authoritative via atomic backend
+    }
+  }
+}

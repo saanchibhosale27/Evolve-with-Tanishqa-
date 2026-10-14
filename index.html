@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Tanishqa Bhosale — Personal & Life Coaching</title>
+    <meta name="description" content="Coaching conversations to help you find clarity, navigate change, and take your next step. Book a session with Tanishqa Bhosale." />
+    <meta property="og:title" content="Tanishqa Bhosale — Personal & Life Coaching" />
+    <meta property="og:description" content="Coaching conversations to help you find clarity, navigate change, and take your next step." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tanishqabhosale.com/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <script>
+      // Suppress Vite dev client WebSocket / HMR connection errors in iframe preview
+      window.addEventListener('unhandledrejection', function (event) {
+        var reason = event && event.reason;
+        var msg = (reason && reason.message) || String(reason || '');
+        var stack = (reason && reason.stack) || '';
+        if (
+          msg.indexOf('WebSocket') !== -1 ||
+          stack.indexOf('@vite/client') !== -1 ||
+          msg.indexOf('@vite/client') !== -1
+        ) {
+          event.preventDefault();
+        }
+      });
+      window.addEventListener('error', function (event) {
+        var fn = (event && event.filename) || '';
+        var msg = (event && event.message) || '';
+        if (fn.indexOf('@vite/client') !== -1 || msg.indexOf('WebSocket') !== -1) {
+          event.preventDefault();
+        }
+      });
+    </script>
+  </head>
+  <body class="bg-[#FFF8F1] text-[#29232B] antialiased selection:bg-[#C9B6E4]/40 selection:text-[#29232B]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

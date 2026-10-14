@@ -1,0 +1,6 @@
+{
+  "name": "Tanishqa Bhosale Coaching",
+  "description": "Coaching conversations to help you find clarity, navigate change, and take your next step. Book a session with Tanishqa Bhosale.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

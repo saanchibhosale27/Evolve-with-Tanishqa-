@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tanishqa Bhosale — Life Coaching</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f2f5;--ink:#2a1e33;--mute:#6b5b73;--plum:#5b3b6e;--gold:#b98a2e;--card:#fff;--line:#e3d6e6;--onplum:#fff;
+--serif:"Cormorant Garamond",Georgia,serif;--sans:"Jost","Helvetica Neue",Arial,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1a1321;--ink:#f2eaf4;--mute:#b3a3ba;--plum:#c9a7dc;--gold:#e0b960;--card:#241a2c;--line:#38293f;--onplum:#1a1321}}
+:root[data-theme="dark"]{--bg:#1a1321;--ink:#f2eaf4;--mute:#b3a3ba;--plum:#c9a7dc;--gold:#e0b960;--card:#241a2c;--line:#38293f;--onplum:#1a1321}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.75 var(--sans);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.05;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:26px 0}
+nav .sans{font-family:var(--serif);font-weight:600;font-size:1.55rem;text-decoration:none;letter-spacing:.01em}
+.btn{display:inline-block;background:var(--plum);color:var(--onplum);font:500 .98rem var(--sans);letter-spacing:.04em;padding:16px 32px;border-radius:999px;text-decoration:none;border:0;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px -10px var(--plum)}
+nav a.btn{padding:11px 22px;font-size:.9rem;background:transparent;color:var(--ink);border:1.5px solid var(--gold)}
+.hero{padding:40px 0 100px;animation:rise .9s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.hero h1{font-size:clamp(3rem,11vw,6.4rem);letter-spacing:-.015em;max-width:13ch}
+.hero p{font-size:1.15rem;max-width:30em;color:var(--mute);margin:28px 0 36px}
+.hero .sun{display:inline-block;width:.16em;height:.16em;border-radius:50%;background:var(--gold);margin-left:.08em}
+section{padding:96px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(2.3rem,6vw,3.6rem);letter-spacing:-.01em;margin-bottom:44px;max-width:16ch}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:36px;counter-reset:s}
+.steps li{counter-increment:s;display:block;padding:26px 0 0;border-top:1px solid var(--gold)}
+.steps li::before{content:counter(s);display:block;font:italic 500 3rem/1 var(--serif);color:var(--gold);margin-bottom:14px}
+.steps h3{font-size:1.7rem;margin-bottom:8px}
+.steps p{margin:0;color:var(--mute)}
+.about{display:grid;gap:44px}
+.about p{margin:0 0 1.2em;max-width:36em}
+.about p:first-child{font:italic 500 1.55rem/1.4 var(--serif);color:var(--plum)}
+.pic{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:28px;background:var(--line);outline:1.5px solid var(--gold);outline-offset:12px}
+.hero .pic,.contact .pic{border-radius:999px 999px 28px 28px}
+.quote{margin:44px 0 0;font:italic 500 1.7rem/1.35 var(--serif);color:var(--plum);padding-top:22px;border-top:1px solid var(--gold)}
+.quote span{display:block;font:500 .9rem var(--sans);letter-spacing:.06em;color:var(--mute);margin-top:12px}
+.contact{display:grid;gap:56px}
+form{display:grid;gap:18px;max-width:520px}
+label{font:500 .92rem var(--sans);letter-spacing:.03em;display:grid;gap:8px}
+input,textarea{font:400 1rem var(--sans);padding:15px 18px;border-radius:16px;border:1px solid var(--line);background:var(--card);color:var(--ink);width:100%;transition:border-color .2s}
+input:focus,textarea:focus{border-color:var(--gold);outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--gold) 30%,transparent)}
+textarea{min-height:120px;resize:vertical}
+#ok{display:none;padding:22px;border-radius:16px;background:var(--card);border:1.5px solid var(--gold);max-width:520px;font:italic 500 1.3rem/1.4 var(--serif)}
+footer{padding:40px 0 64px;color:var(--mute);font-size:.9rem;border-top:1px solid var(--line);text-align:center}
+@media(min-width:760px){.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:72px;align-items:center;padding:48px 0 100px}.about{grid-template-columns:1.25fr 1fr;gap:72px;align-items:start}.contact{grid-template-columns:1fr 1fr;gap:80px;align-items:center}.steps{grid-template-columns:repeat(3,1fr);gap:40px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero{animation:none}.btn{transition:none}}
+.about-pic{grid-column:1/-1;max-width:420px;border-radius:999px 999px 28px 28px}.about .quote{margin-top:0}
+.contact{display:block}
+.stars{border:0;padding:0;margin:0;position:relative;display:flex;flex-direction:row-reverse;justify-content:flex-end;gap:4px}
+.stars legend{font:500 .92rem var(--sans);letter-spacing:.03em;padding:0;margin-bottom:6px}
+.stars input{position:absolute;opacity:0;width:1px;height:1px}
+.stars label{display:block;font-size:2.4rem;line-height:1;color:var(--line);cursor:pointer;letter-spacing:0}
+.stars input:checked~label,.stars label:hover,.stars label:hover~label{color:var(--gold)}
+.stars input:focus-visible+label{outline:3px solid var(--gold);border-radius:6px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.orn{width:1em;height:1em;fill:currentColor;display:inline-block;vertical-align:middle}
+.hero{position:relative}
+.ho{position:absolute;pointer-events:none;font-size:26px}
+.h1{top:2px;right:6px}.h2,.h3{display:none}
+.divider{display:flex;align-items:center;justify-content:center;gap:14px;font-size:20px;padding:56px 0 0}
+.divider::before,.divider::after{content:"";flex:1;height:1px;background:var(--line)}
+.divider+section{border-top:0;padding-top:56px}
+.orn-row{display:flex;gap:14px;font-size:22px;margin:0 0 24px}
+footer .orn{font-size:20px;margin-bottom:8px}
+@media(min-width:760px){.ho{left:54%;right:auto;transform:translateX(-50%)}.h1{top:6%;font-size:34px}.h2{display:block;top:48%}.h3{display:block;top:84%;font-size:18px}}
+.steps li{position:relative}
+.si{position:absolute;top:26px;right:0;width:44px;height:44px;fill:none;stroke:var(--plum);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.li{fill:none;stroke:var(--gold);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.hi{display:block;width:44px;height:44px;margin-bottom:16px}
+.qi{display:block;width:32px;height:32px;margin-bottom:12px}
+.hero-icons{display:flex;gap:22px;margin-top:40px}
+.hero-icons .li{width:30px;height:30px}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="heart" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></symbol><symbol id="spark" viewBox="0 0 24 24"><path d="M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2z"/></symbol></svg>
+<div class="wrap">
+<nav><a class="sans" href="#top">Tanishqa Bhosale</a><a class="btn" href="#contact">Book a call</a></nav>
+<header class="hero" id="top"><svg class="orn ho h1" style="color:var(--gold);" aria-hidden="true"><use href="#spark"/></svg><svg class="orn ho h2" style="color:var(--plum);" aria-hidden="true"><use href="#heart"/></svg><svg class="orn ho h3" style="color:var(--gold);" aria-hidden="true"><use href="#spark"/></svg><div>
+<h1>What would you do if you stopped waiting<span class="sun"></span></h1>
+<p>I coach people at a crossroads: a career that no longer fits, a big decision they keep circling, or a life that looks fine but feels off. Together we find what you want, then build the habits to get there.</p>
+<a class="btn" href="#contact">Book a free intro call</a><div class="hero-icons" aria-hidden="true"><svg class="li " viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg><svg class="li " viewBox="0 0 24 24" aria-hidden="true"><path d="M12 18C9.800 16.200 9.200 12.600 12 8c2.800 4.600 2.200 8.200 0 10z"/><path d="M12 18c-3 0-5.500-1.800-6.500-5 2.600-.4 4.700.6 6 2.800M12 18c3 0 5.500-1.800 6.500-5-2.600-.4-4.700.6-6 2.800"/><path d="M4 20.500h16"/></svg><svg class="li " viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21v-9"/><path d="M12 12C12 8 9 6 5 6c0 4 2.500 6 7 6z"/><path d="M12 14c0-3.500 2.500-5.500 7-5.500 0 3.500-2.500 5.500-7 5.500z"/></svg><svg class="li " viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.900 4.900L7 7M17 17l2.100 2.100M4.900 19.100L7 17M17 7l2.100-2.100"/></svg></div>
+</div><img class="pic" src="[BASE64_IMAGE]" alt="Tanishqa Bhosale resting her chin on her hand at an outdoor table" width="800" height="1000"></header>
+
+<section id="how">
+<svg class="li hi" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 00-3.500 10.900c.700.600 1 1.300 1 2.100h5c0-.800.300-1.500 1-2.100A6 6 0 0012 3z"/></svg><h2>How coaching works</h2>
+<ol class="steps">
+<li><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v10H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg><h3>We talk, you get clear</h3><p>A free 30-minute call. You tell me what's going on, and we decide if working together makes sense.</p></li>
+<li><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><h3>Your first session</h3><p>One hour together. We turn a vague "something needs to change" into a goal you can measure.</p></li>
+<li><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4M8 14h.01M12 14h.01M16 14h.01M8 17h.01M12 17h.01"/></svg><h3>We set your rhythm</h3><p>After the first session, we decide together how many sessions a week suit you. Every session is one hour and ends with small actions you choose yourself.</p></li>
+</ol>
+</section>
+
+<div class="divider" aria-hidden="true"><svg class="orn " style="color:var(--gold);" aria-hidden="true"><use href="#spark"/></svg><svg class="orn " style="color:var(--plum);" aria-hidden="true"><use href="#heart"/></svg><svg class="orn " style="color:var(--gold);" aria-hidden="true"><use href="#spark"/></svg></div>
+<section id="about">
+<svg class="li hi" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20l6-10 4 6 2-3 6 7z"/><path d="M9 10l1.500 2.500"/></svg><h2>My journey was never a straight line</h2>
+<div class="about">
+<img class="pic about-pic" src="[BASE64_IMAGE]" alt="Tanishqa Bhosale smiling over her shoulder" width="800" height="1000">
+<div>
+<p>Today I see that was the point. For years I thought living in the moment meant I was behind. It turned out to be the beginning of everything.</p>
+<p>In 2018, the Miss India stage taught me how to hold myself in rooms I had never been in before. Then I moved to Canada for a post-graduate degree: a new country, a new chapter, and so much room to grow. If you've ever found yourself in an unexpected space while doing all the "right" things, I understand, and I know it can become the start of something new.</p>
+<p>I earned my own way while I was there, and standing on my own feet taught me things no classroom could. Social work then brought me close to people living very different realities, and meeting people from so many places changed how I see people and life.</p>
+<p>I don't have it all figured out. But I've lived enough versions of uncertainty to know how to sit with someone else's.</p>
+</div>
+<div><blockquote class="quote"><svg class="li qi" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 18C9.800 16.200 9.200 12.600 12 8c2.800 4.600 2.200 8.200 0 10z"/><path d="M12 18c-3 0-5.500-1.800-6.500-5 2.600-.4 4.700.6 6 2.800M12 18c3 0 5.500-1.800 6.500-5-2.600-.4-4.700.6-6 2.800"/><path d="M4 20.500h16"/></svg>Not becoming someone else. Becoming more aware of who I am, and having the courage to keep evolving.<span>Tanishqa</span></blockquote></div>
+</div>
+</section>
+
+<div class="divider" aria-hidden="true"><svg class="orn " style="color:var(--gold);" aria-hidden="true"><use href="#spark"/></svg><svg class="orn " style="color:var(--plum);" aria-hidden="true"><use href="#heart"/></svg><svg class="orn " style="color:var(--gold);" aria-hidden="true"><use href="#spark"/></svg></div>
+<section id="reviews">
+<svg class="li hi" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.400-7-10a4 4 0 017-2.500A4 4 0 0119 10c0 5.600-7 10-7 10z"/></svg><h2>Kind words</h2>
+<p style="max-width:32em;margin:0 0 32px;color:var(--mute)">Reviews from my clients will appear here. If we've worked together, I'd love to hear how it went. Write your review below.</p>
+<div class="orn-row" aria-hidden="true"><svg class="orn " style="color:var(--plum);" aria-hidden="true"><use href="#heart"/></svg><svg class="orn " style="color:var(--gold);" aria-hidden="true"><use href="#spark"/></svg><svg class="orn " style="color:var(--plum);" aria-hidden="true"><use href="#heart"/></svg></div>
+<form id="rf">
+<label>Your name<input name="rname" required autocomplete="name"></label>
+<fieldset class="stars"><legend>Rating</legend><input type="radio" name="rating" id="s5" value="5" required><label for="s5" title="5 stars"><span class="sr">5 stars</span>★</label><input type="radio" name="rating" id="s4" value="4"><label for="s4" title="4 stars"><span class="sr">4 stars</span>★</label><input type="radio" name="rating" id="s3" value="3"><label for="s3" title="3 stars"><span class="sr">3 stars</span>★</label><input type="radio" name="rating" id="s2" value="2"><label for="s2" title="2 stars"><span class="sr">2 stars</span>★</label><input type="radio" name="rating" id="s1" value="1"><label for="s1" title="1 star"><span class="sr">1 star</span>★</label></fieldset>
+<label>Your review<textarea name="review" required></textarea></label>
+<button class="btn" type="submit">Submit my review</button>
+</form>
+<div id="rok" role="status" style="display:none;padding:22px;border-radius:16px;background:var(--card);border:1.5px solid var(--gold);max-width:520px;font:italic 500 1.3rem/1.4 var(--serif)">Thank you! Your email app should open with your review ready to send. Press send to share it with me.</div>
+</section>
+
+<div class="divider" aria-hidden="true"><svg class="orn " style="color:var(--gold);" aria-hidden="true"><use href="#spark"/></svg><svg class="orn " style="color:var(--plum);" aria-hidden="true"><use href="#heart"/></svg><svg class="orn " style="color:var(--gold);" aria-hidden="true"><use href="#spark"/></svg></div>
+<section id="contact">
+<svg class="li hi" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.900 4.900L7 7M17 17l2.100 2.100M4.900 19.100L7 17M17 7l2.100-2.100"/></svg><h2>Book your free intro call</h2>
+<p style="max-width:34em;margin:-18px 0 32px;color:var(--mute)">Sessions are one hour long. Fees are in INR, and we'll go over them on your call.</p>
+<div class="contact"><div><form id="f">
+<label>Name<input name="name" required autocomplete="name"></label>
+<label>Email<input name="email" type="email" required autocomplete="email"></label>
+<label>What would you like help with?<textarea name="msg"></textarea></label>
+<button class="btn" type="submit">Request my call</button>
+</form>
+<div id="ok" role="status">Thanks! Your email app should open with your message ready to send. Press send and I'll reply within two business days to find a time.</div></div></div>
+</section>
+<footer><svg class="orn " style="color:var(--plum);" aria-hidden="true"><use href="#heart"/></svg><br>© 2026 Tanishqa Bhosale Coaching. Coaching is not a substitute for therapy or medical care.</footer>
+</div>
+<script>
+document.getElementById('f').addEventListener('submit',function(e){
+e.preventDefault();
+var f=this.elements;
+var body="Name: "+f.name.value+"\nEmail: "+f.email.value+"\n\n"+f.msg.value;
+window.location.href="mailto:Tanishqabhosale99@gmail.com?subject="+encodeURIComponent("Intro call request from "+f.name.value)+"&body="+encodeURIComponent(body);
+this.style.display='none';
+document.getElementById('ok').style.display='block';
+});
+
+document.getElementById('rf').addEventListener('submit',function(e){
+e.preventDefault();
+var f=this.elements;
+var body="Name: "+f.rname.value+"\nRating: "+"★".repeat(+f.rating.value)+"☆".repeat(5-f.rating.value)+"\n\n"+f.review.value;
+window.location.href="mailto:Tanishqabhosale99@gmail.com?subject="+encodeURIComponent("New review from "+f.rname.value)+"&body="+encodeURIComponent(body);
+this.style.display='none';
+document.getElementById('rok').style.display='block';
+});
+</script>
+</body>
+</html>

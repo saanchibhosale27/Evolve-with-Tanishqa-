@@ -1,0 +1,81 @@
+{
+  "bookings": [
+    {
+      "id": "bk_1791347664762_l2p26",
+      "slotId": "2026-10-12_14:00",
+      "clientName": "Test User",
+      "clientEmail": "test@example.com",
+      "sessionType": "Free Intro Call",
+      "date": "Monday, Oct 12",
+      "time": "2:00 PM",
+      "notes": "Testing booking system",
+      "status": "confirmed",
+      "createdAt": "2026-10-07T04:34:24.762Z",
+      "emailStatus": "failed",
+      "emailError": "No server-side transactional email provider configured (set RESEND_API_KEY in Secrets)."
+    },
+    {
+      "id": "bk_1791347964238_vytoz",
+      "slotId": "2026-10-15_10:00",
+      "clientName": "Aarav Mehta",
+      "clientEmail": "aarav.mehta@example.com",
+      "sessionType": "Free Intro Call",
+      "date": "Thursday, Oct 15",
+      "time": "10:00 AM",
+      "notes": "Looking for clarity on a career pivot",
+      "status": "confirmed",
+      "createdAt": "2026-10-07T04:39:24.238Z",
+      "emailStatus": "failed",
+      "emailError": "No server-side transactional email provider configured (set RESEND_API_KEY in Secrets)."
+    },
+    {
+      "id": "bk_1791368121815_j92vr",
+      "slotId": "2026-10-07_17:00",
+      "clientName": "saanchi",
+      "clientEmail": "saanchibhosale27@gmail.com",
+      "sessionType": "Free Intro Call",
+      "date": "Wednesday, Oct 7",
+      "time": "5:00 PM",
+      "notes": "",
+      "status": "confirmed",
+      "createdAt": "2026-10-07T10:15:21.815Z",
+      "emailStatus": "failed",
+      "emailError": "No server-side transactional email provider configured (set RESEND_API_KEY in Secrets)."
+    },
+    {
+      "id": "bk_1791369167779_tyy8c",
+      "slotId": "2026-10-16_15:30",
+      "clientName": "Rhea Kapoor",
+      "clientEmail": "rhea.kapoor@example.com",
+      "sessionType": "Free Intro Call",
+      "date": "Friday, Oct 16",
+      "time": "3:30 PM",
+      "notes": "Navigating a career transition into social entrepreneurship",
+      "status": "confirmed",
+      "createdAt": "2026-10-07T10:32:47.779Z",
+      "emailStatus": "failed",
+      "emailError": "No server-side transactional email provider configured (set RESEND_API_KEY in Secrets)."
+    },
+    {
+      "id": "bk_1791369343856_jpff2",
+      "slotId": "2026-10-17_11:30",
+      "clientName": "Devika Sengupta",
+      "clientEmail": "devika.s@example.com",
+      "sessionType": "Free Intro Call",
+      "date": "Saturday, Oct 17",
+      "time": "11:30 AM",
+      "notes": "Clarifying professional boundaries",
+      "status": "confirmed",
+      "createdAt": "2026-10-07T10:35:43.856Z",
+      "emailStatus": "failed",
+      "emailError": "No server-side transactional email provider configured (set RESEND_API_KEY in Secrets)."
+    }
+  ],
+  "bookedSlots": {
+    "2026-10-12_14:00": "bk_1791347664762_l2p26",
+    "2026-10-15_10:00": "bk_1791347964238_vytoz",
+    "2026-10-07_17:00": "bk_1791368121815_j92vr",
+    "2026-10-16_15:30": "bk_1791369167779_tyy8c",
+    "2026-10-17_11:30": "bk_1791369343856_jpff2"
+  }
+}

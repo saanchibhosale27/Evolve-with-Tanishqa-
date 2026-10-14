@@ -1,0 +1,45 @@
+{
+  "entities": {
+    "Booking": {
+      "title": "Booking",
+      "description": "A confirmed coaching appointment",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "slotId": { "type": "string" },
+        "clientName": { "type": "string", "maxLength": 100 },
+        "clientEmail": { "type": "string", "maxLength": 120 },
+        "sessionType": { "type": "string", "maxLength": 60 },
+        "date": { "type": "string", "maxLength": 60 },
+        "time": { "type": "string", "maxLength": 30 },
+        "notes": { "type": "string", "maxLength": 1000 },
+        "status": { "type": "string", "enum": ["confirmed", "cancelled"] },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "slotId", "clientName", "clientEmail", "sessionType", "date", "time", "status", "createdAt"]
+    },
+    "Slot": {
+      "title": "Slot",
+      "description": "Unique appointment slot for single-occupancy atomic reservation",
+      "type": "object",
+      "properties": {
+        "slotId": { "type": "string", "maxLength": 60 },
+        "bookingId": { "type": "string", "maxLength": 60 },
+        "date": { "type": "string", "maxLength": 60 },
+        "time": { "type": "string", "maxLength": 30 },
+        "reservedAt": { "type": "string" }
+      },
+      "required": ["slotId", "bookingId", "date", "time", "reservedAt"]
+    }
+  },
+  "firestore": {
+    "/bookings/{bookingId}": {
+      "schema": { "$ref": "#/entities/Booking" },
+      "description": "Collection of all coaching bookings"
+    },
+    "/slots/{slotId}": {
+      "schema": { "$ref": "#/entities/Slot" },
+      "description": "Collection of reserved single-occupancy appointment slots"
+    }
+  }
+}
